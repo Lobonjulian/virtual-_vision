@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2025",
+    "module": "ES2022",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noEmitOnError": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src"]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "virtual-vision",
+  "version": "0.1.0",
+  "description": "Plataforma de visualización arquitectónica en realidad aumentada",
+  "keywords": [
+    "arquitectura",
+    "realidad aumentada",
+    "typescript",
+    "visualización",
+    "webgl"
+  ],
+  "license": "MIT",
+  "author": "Julian Lobon",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.4.2",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.4.2"
+}
