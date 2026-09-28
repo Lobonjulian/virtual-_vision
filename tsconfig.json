@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es2025",
-    "module": "ES2022",
+    "target": "es2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "strict": true,
     "noUnusedLocals": true,
     "noEmitOnError": true,
     "outDir": "dist",
     "rootDir": "src",
     "sourceMap": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true
   },
   "include": ["src"]
 }

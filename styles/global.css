@@ -1,0 +1,20 @@
+@import "fonts.css";
+@import "variables.css";
+@import "reset.css";
+@import "buttons.css";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+
+  .header__nav {
+    display: flex;
+    gap: var(--space-md);
+  }
+  .header__action {
+    display: flex;
+    gap: var(--space-xs);
+  }
+}

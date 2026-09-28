@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Plataforma de visualización arquitectónica en realidad aumentada"
+    />
+    <title>Virtual Vision - Plataforma de visualización arquitectónica en realidad aumentada</title>
+    <link rel="shortcut icon" href="assets/icons/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <script type="module" src="dist/app.js" defer></script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <header class="header" role="banner">
+      <div class="header__logo">
+        <a href="/" aria-label="Virtual Vision - Inicio">
+          <img src="assets/icons/logo.svg" alt="Logo" />
+        </a>
+      </div>
+      <nav class="header__nav" aria-label="Navegación principal"></nav>
+      <div class="header__action">
+        <button class="btn btn--outline">Iniciar sesión</button>
+        <button class="btn btn--primary">Comenzar gratis ahora</button>
+      </div>
+    </header>
+
+    <main id="main-content" class="main" role="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">
+          Comienza a visualizar proyectos arquitectónicos en realidad aumentada
+        </h1>
+        <p class="hero__description"></p>
+        <div class="hero__cta">
+          <button id="hero__btn" class="btn btn--secondary" type="button"></button>
+          <p class="hero__legal"></p>
+        </div>
+        <div class="hero__image">
+          <img src="assets/images/arquitecto-usando-visor.png" alt="arquitecto usando visor" />
+        </div>
+      </section>
+
+      <section id="stats" class="stats">
+        <h2 id="stats-title" class="sr-only">Estadísticas de la plataforma</h2>
+      </section>
+
+      <section class="features"></section>
+      <section id="values" class="values" aria-labelledby="values-title">
+        <h2 id="values-title" class="sr-only">Propuestas de valor</h2>
+      </section>
+
+      <section id="global-stats" class="global-stats" aria-labelledby="global-stats-title">
+        <h2 id="global-stats-title">Proyecta en todo el mundo</h2>
+        <p>Lleva tus diseños arquitectónicos más allá de las fronteras.</p>
+      </section>
+
+      <section id="services" class="services" aria-labelledby="services-title">
+        <h2 id="services-title" class="sr-only">Nuestros servicios</h2>
+      </section>
+
+      <section id="final-cta" class="final-cta" aria-labelledby="final-cta-title">
+        <h2 id="final-cta-title">
+          Tu estudio de visualización arquitectónica está a solo unos clics
+        </h2>
+        <button class="btn btn--cta-final" type="button">Empieza gratis ahora</button>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <section class="footer__columns"></section>
+      <section class="footer__copyright">
+        <p>Copyright © 2023 Virtual Vision. Todos los derechos reservados.</p>
+        <div class="footer__social"></div>
+      </section>
+    </footer>
+  </body>
+</html>
