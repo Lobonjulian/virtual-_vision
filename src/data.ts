@@ -10,17 +10,17 @@ export const site: SiteConfig = {
   hero: {
     title: "Comienza a visualizar proyectos arquitectónicos en realidad aumentada",
     description:
-      "La plataforma que permite a arquitectos y diseño mostrar sus proyectos en 3D con realidad aumentada, facil de usar y accesible para todos digitales para tu negocio",
+      "La plataforma que permite a arquitectos y diseño mostrar sus proyectos en 3D con realidad aumentada, fácil de usar y accesible para todos digitales para tu negocio",
     cta: "Prueba gratis ahora",
     legalNote: "No se requiere tarjeta de crédito",
     imageSrc: "assets/images/arquitecto-usando-visor.png",
     imageAlt: "Arquitecto usando visor de realidad aumentada",
   },
   stats: [
-    { value: "50+", label: "proyectos realizados", iconClass: "projects" },
-    { value: "175+", label: "clientes satisfechos", iconClass: "clients" },
-    { value: "50", label: "ciudades cubiertas", iconClass: "employees" },
-    { value: "1000+", label: "visualizaciones realizadas en 2025", iconClass: "views" },
+    { value: "50+", label: "proyectos realizados", iconClass: "ph-buildings" },
+    { value: "175+", label: "clientes satisfechos", iconClass: "ph-users" },
+    { value: "50", label: "ciudades cubiertas", iconClass: "ph-map-pin" },
+    { value: "1000+", label: "visualizaciones realizadas en 2025", iconClass: "ph-eye" },
   ],
   values: [
     {
@@ -72,7 +72,7 @@ export const site: SiteConfig = {
         description:
           "La plataforma es increíblemente intuitiva. Hemos integrado Virtual Vision en todo nuestro flujo de trabajo.",
       },
-      blobColor: "#BFDBFE", 
+      blobColor: "#BFDBFE",
     },
   ],
   globalStats: [
@@ -120,17 +120,17 @@ export const site: SiteConfig = {
     {
       title: "Productos",
       links: [
-        { label: "Visualizacion AR", href: "#" },
+        { label: "Visualización AR", href: "#" },
         { label: "Planos 3D", href: "#" },
-        { label: "Gestion de proyectos", href: "#" },
-        { label: "App movil", href: "#" },
+        { label: "Gestión de proyectos", href: "#" },
+        { label: "App móvil", href: "#" },
         { label: "Integraciones", href: "#" },
       ],
     },
     {
       title: "Recursos",
       links: [
-        { label: "Documentacion", href: "#" },
+        { label: "Documentación", href: "#" },
         { label: "Tutoriales", href: "#" },
         { label: "Casos de estudio", href: "#" },
       ],
@@ -139,17 +139,17 @@ export const site: SiteConfig = {
       title: "Soporte",
       links: [
         { label: "Centro de ayuda", href: "#" },
-        { label: "Contactanos", href: "#" },
+        { label: "Contáctanos", href: "#" },
         { label: "Estado del servicio", href: "#" },
         { label: "Preguntas frecuentes", href: "#" },
       ],
     },
   ],
   socialLinks: [
-    { platform: "Twitter", href: "https://twitter.com", iconClass: "twitter" },
-    { platform: "Facebook", href: "https://facebook.com", iconClass: "facebook" },
-    { platform: "Instagram", href: "https://instagram.com", iconClass: "instagram" },
-    { platform: "LinkedIn", href: "https://linkedin.com", iconClass: "linkedin" },
-    { platform: "YouTube", href: "https://youtube.com", iconClass: "youtube" },
-  ],
+  { platform: "Twitter",   href: "https://twitter.com",   iconClass: "ph ph-twitter-logo" },
+  { platform: "Facebook",  href: "https://facebook.com",  iconClass: "ph ph-facebook-logo" },
+  { platform: "Instagram", href: "https://instagram.com", iconClass: "ph ph-instagram-logo" },
+  { platform: "LinkedIn",  href: "https://linkedin.com",  iconClass: "ph ph-linkedin-logo" },
+  { platform: "YouTube",   href: "https://youtube.com",   iconClass: "ph ph-youtube-logo" },
+],
 };

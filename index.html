@@ -10,6 +10,12 @@
     <title>Virtual Vision - Plataforma de visualización arquitectónica en realidad aumentada</title>
     <link rel="shortcut icon" href="assets/icons/logo.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles/global.css" />
+    <!-- TODO: Migrar a SVG locales en v0.2 para eliminar dependencia de CDN -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
     <script type="module" src="dist/app.js" defer></script>
   </head>
   <body>
@@ -29,24 +35,28 @@
 
     <main id="main-content" class="main" role="main">
       <section class="hero" aria-labelledby="hero-title">
-        <h1 id="hero-title">
-          Comienza a visualizar proyectos arquitectónicos en realidad aumentada
-        </h1>
-        <p class="hero__description"></p>
-        <div class="hero__cta">
-          <button id="hero__btn" class="btn btn--secondary" type="button"></button>
-          <p class="hero__legal"></p>
+        <div class="hero__content">
+          <h1 id="hero-title">
+            Comienza a visualizar proyectos arquitectónicos en realidad aumentada
+          </h1>
+          <p class="hero__description">
+            La plataforma que permite a arquitectos y diseño mostrar sus proyectos en 3D con
+            realidad aumentada, fácil de usar y accesible para todos digitales para tu negocio
+          </p>
+          <div class="hero__cta">
+            <button id="hero-cta" class="btn btn--secondary" type="button">Prueba</button>
+            <p class="hero__legal">No se requiere tarjeta de crédito</p>
+          </div>
         </div>
         <div class="hero__image">
           <img src="assets/images/arquitecto-usando-visor.png" alt="arquitecto usando visor" />
         </div>
       </section>
 
-      <section id="stats" class="stats">
+      <section id="stats">
         <h2 id="stats-title" class="sr-only">Estadísticas de la plataforma</h2>
       </section>
 
-      <section class="features"></section>
       <section id="values" class="values" aria-labelledby="values-title">
         <h2 id="values-title" class="sr-only">Propuestas de valor</h2>
       </section>

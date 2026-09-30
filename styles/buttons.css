@@ -1,6 +1,6 @@
 .btn {
   padding: var(--space-xs) var(--space-sm);
-  color: var(--color-white);
+  color: var(--color-white-50);
   border: none;
   border-radius: var(--radius-sm);
   font-weight: 600;

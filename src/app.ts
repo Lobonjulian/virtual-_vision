@@ -1,7 +1,8 @@
 import { site } from "./data.js";
+import type { GlobalStatItem, ServiceItem, StatItem, ValueSection } from "./types.js";
 
 function renderNav(): void {
-  const navContainer = document.querySelector<HTMLElement>(".header__nav");
+  const navContainer = document.querySelector(".header__nav");
   if (!navContainer) return;
 
   const navHTML = site.nav
@@ -11,48 +12,56 @@ function renderNav(): void {
 }
 
 function renderHero(): void {
-  const titleEl = document.querySelector<HTMLElement>("#hero-title");
-  const descriptionEl = document.querySelector<HTMLElement>(".hero__description");
-  const ctaEl = document.querySelector<HTMLElement>("#hero__btn");
-  const legalEl = document.querySelector<HTMLElement>(".hero__legal");
+  const titleEl = document.querySelector("#hero-title");
+  const descriptionEl = document.querySelector(".hero__description");
+  const ctaEl = document.querySelector("#hero-cta");
+  const legalEl = document.querySelector(".hero__legal");
   const heroImg = document.querySelector<HTMLImageElement>(".hero__image img");
 
-  if (titleEl) titleEl.textContent = site.hero.title;
-  if (descriptionEl) descriptionEl.textContent = site.hero.description;
-  if (ctaEl) ctaEl.textContent = site.hero.cta;
-  if (legalEl) legalEl.textContent = site.hero.legalNote;
-  if (heroImg) {
-    heroImg.src = site.hero.imageSrc;
-    heroImg.alt = site.hero.imageAlt;
+  if (!titleEl || !descriptionEl || !ctaEl || !legalEl || !heroImg) {
+    throw new Error("Elementos HTML no encontrados en el Hero");
   }
+
+  titleEl.textContent = site.hero.title;
+  descriptionEl.textContent = site.hero.description;
+  ctaEl.textContent = site.hero.cta;
+  legalEl.textContent = site.hero.legalNote;
+  heroImg.src = site.hero.imageSrc;
+  heroImg.alt = site.hero.imageAlt;
 }
 
+function renderList<T>(items: readonly T[], templete: (item: T) => string): string {
+  return items.map(templete).join("");
+}
 function renderStats(): void {
-  const statsContainer = document.querySelector<HTMLElement>(".stats");
+  const statsContainer = document.getElementById("stats");
   if (!statsContainer) return;
 
-  const statsHTML = site.stats
-    .map(
-      (stat) => `<div class="stat-item">
-    <i class="${stat.iconClass} stat-item__icon"></i>
-    <span class="stat-item__value">${stat.value}</span>
-    <span class="stat-item__label">${stat.label}</span>
-    </div>`,
-    )
-    .join("");
-  statsContainer.innerHTML = `<h2 id="stats-title" class="sr-only">Estadísticas de la plataforma</h2>${statsHTML}`;
+  const statsHTML = renderList<StatItem>(
+    site.stats,
+    (stat) => `
+        <div class="stat-item">
+          <i class="ph ${stat.iconClass} stat-item__icon" aria-hidden="true"></i>
+          <span class="stat-item__value">${stat.value}</span>
+          <span class="stat-item__label">${stat.label}</span>
+        </div>
+      `,
+  );
+  statsContainer.innerHTML = `<h2 class="sr-only">Estadísticas de la plataforma</h2>
+  ${statsHTML}
+  `;
 }
 
 function renderValues(): void {
-  const valuesContainer = document.querySelector<HTMLElement>("#values");
+  const valuesContainer = document.getElementById("values");
   if (!valuesContainer) return;
 
-  const valuesHTML = site.values
-    .map(
-      (section) => `
+  const valuesHTML = renderList<ValueSection>(
+    site.values,
+    (section) => `
     <article class="value-section" style="--blob-color: ${section.blobColor || "transparent"}">
       <div class="value-section__content">
-        <h2 class="value-section__title">${section.title}</h2>
+        <h3 class="value-section__title">${section.title}</h3>
         <p class="value-section__body">${section.body}</p>
         <a href="${section.buttonHref}" class="btn btn--outline">${section.buttonLabel}</a>
         
@@ -69,49 +78,49 @@ function renderValues(): void {
       </div>
     </article>
   `,
-    )
-    .join("");
+  );
 
   valuesContainer.innerHTML = `<h2 id="values-title" class="sr-only">Propuestas de valor</h2>${valuesHTML}`;
 }
 
 function renderGlobalStats(): void {
-  const globalStatsContainer = document.querySelector<HTMLElement>("#global-stats");
+  const globalStatsContainer = document.getElementById("global-stats");
   if (!globalStatsContainer) return;
 
-  const globalGridHTML = site.globalStats
-    .map(
-      (stat) => `<div class="stat-item">
-  <span class="stat-item__value">${stat.value}</span>
+  const globalGridHTML = renderList<GlobalStatItem>(
+    site.globalStats,
+    (stat) => `<div class="stat-item">
+  <span class="global-stats__value">${stat.value}</span>
   <span class="stat-item__label">${stat.label}</span>
   </div>`,
-    )
-    .join("");
-  globalStatsContainer.insertAdjacentHTML("beforeend", `<div class="global-stats__grid">${globalGridHTML}</div>`);
+  );
+  globalStatsContainer.insertAdjacentHTML(
+    "beforeend",
+    `<div class="global-stats__grid">${globalGridHTML}</div>`,
+  );
 }
 
 function renderServices(): void {
-  const servicesContainer = document.querySelector<HTMLElement>("#services");
+  const servicesContainer = document.querySelector("#services");
   if (!servicesContainer) return;
 
-  const servicesHTML = site.services
-    .map(
-      (service) => `
+  const servicesHTML = renderList<ServiceItem>(
+    site.services,
+    (service) => `
     <article class="service-card">
       <i class="${service.iconClass} service-card__icon" aria-hidden="true"></i>
       <h3 class="service-card__title">${service.title}</h3>
       <p class="service-card__description">${service.description}</p>
       <a href="${service.linkHref}" class="service-card__link">${service.linkLabel}</a>
     </article>`,
-    )
-    .join("");
+  );
 
-  servicesContainer.innerHTML = `<h2 id="services-title" class="sr-only">Nuestros servicios</h2>${servicesHTML}`;
+  servicesContainer.innerHTML = `<h2 id="services-title" class="sr-only">Nuestros servicios</h2><div class="services-grid">${servicesHTML}</div>`;
 }
 
 function renderFooter(): void {
-  const columnsContainer = document.querySelector<HTMLElement>(".footer__columns");
-  const socialContainer = document.querySelector<HTMLElement>(".footer__social");
+  const columnsContainer = document.querySelector(".footer__columns");
+  const socialContainer = document.querySelector(".footer__social");
 
   if (columnsContainer) {
     const columnsHTML = site.footerColumns
@@ -144,11 +153,15 @@ function renderFooter(): void {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderNav();
-  renderHero();
-  renderStats();
-  renderValues();
-  renderServices();
-  renderGlobalStats();
-  renderFooter();
+  try {
+    renderNav();
+    renderHero();
+    renderStats();
+    renderValues();
+    renderServices();
+    renderGlobalStats();
+    renderFooter();
+  } catch (error) {
+    console.error("Error al renderizar el contenido:", error);
+  }
 });

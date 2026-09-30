@@ -43,11 +43,3 @@ ol {
 a {
   text-decoration: none;
 }
-
-.btn {
-  padding: var(--space-xs);
-  border: none;
-  border-radius: var(--space-xs);
-  color: var(--color-white);
-  cursor: pointer;
-}
