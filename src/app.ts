@@ -1,5 +1,12 @@
 import { site } from "./data.js";
-import type { GlobalStatItem, ServiceItem, StatItem, ValueSection } from "./types.js";
+import type {
+  FooterColumn,
+  GlobalStatItem,
+  ServiceItem,
+  SocialLink,
+  StatItem,
+  ValueSection,
+} from "./types.js";
 
 function renderNav(): void {
   const navContainer = document.querySelector(".header__nav");
@@ -59,7 +66,7 @@ function renderValues(): void {
   const valuesHTML = renderList<ValueSection>(
     site.values,
     (section) => `
-    <article class="value-section" style="--blob-color: ${section.blobColor || "transparent"}">
+    <article class="value-section" style="--blob-color: ${section.blobColor ?? "transparent"}">
       <div class="value-section__content">
         <h3 class="value-section__title">${section.title}</h3>
         <p class="value-section__body">${section.body}</p>
@@ -121,11 +128,14 @@ function renderServices(): void {
 function renderFooter(): void {
   const columnsContainer = document.querySelector(".footer__columns");
   const socialContainer = document.querySelector(".footer__social");
+  const taglineContainer = document.getElementById("footer-tagline");
+
+  if (taglineContainer) taglineContainer.textContent = site.footerBrand.tagline;
 
   if (columnsContainer) {
-    const columnsHTML = site.footerColumns
-      .map(
-        (column) => `
+    const columnsHTML = renderList<FooterColumn>(
+      site.footerColumns,
+      (column) => `
       <div class="footer__column">
         <h4 class="footer__column-title">${column.title}</h4>
         <ul class="footer__links">
@@ -133,21 +143,19 @@ function renderFooter(): void {
         </ul>
       </div>
     `,
-      )
-      .join("");
+    );
     columnsContainer.innerHTML = columnsHTML;
   }
 
   if (socialContainer) {
-    const socialHTML = site.socialLinks
-      .map(
-        (social) => `
+    const socialHTML = renderList<SocialLink>(
+      site.socialLinks,
+      (social) => `
       <a href="${social.href}" class="footer__social-link" aria-label="Síguenos en ${social.platform}" target="_blank" rel="noopener noreferrer">
         <i class="${social.iconClass}" aria-hidden="true"></i>
       </a>
     `,
-      )
-      .join("");
+    );
     socialContainer.innerHTML = socialHTML;
   }
 }

@@ -13,7 +13,7 @@ export const site: SiteConfig = {
       "La plataforma que permite a arquitectos y diseño mostrar sus proyectos en 3D con realidad aumentada, fácil de usar y accesible para todos digitales para tu negocio",
     cta: "Prueba gratis ahora",
     legalNote: "No se requiere tarjeta de crédito",
-    imageSrc: "assets/images/arquitecto-usando-visor.png",
+    imageSrc: "assets/images/arquitecto-usando-visor.avif",
     imageAlt: "Arquitecto usando visor de realidad aumentada",
   },
   stats: [
@@ -27,7 +27,7 @@ export const site: SiteConfig = {
       id: "visualiza",
       title: "Visualiza en cualquier lugar",
       body: "Muestra tus proyectos arquitectónicos donde quieras: en reuniones, estudios o directamente en el terreno donde se construirá",
-      imageSrc: "assets/images/valor-1.jpg",
+      imageSrc: "assets/images/valor-1.avif",
       imageAlt: "Persona usando visor VR en oficina",
       buttonLabel: "Saber más",
       buttonHref: "#",
@@ -44,7 +44,7 @@ export const site: SiteConfig = {
       id: "crece",
       title: "Crece más rápido",
       body: "Impulsa tu estudio de arquitectura o diseño con herramientas de visualización 3D que impresionan a tus clientes",
-      imageSrc: "assets/images/valor-2.jpg",
+      imageSrc: "assets/images/valor-2.avif",
       imageAlt: "Persona con post-its en la cara",
       buttonLabel: "Conoce más",
       buttonHref: "#",
@@ -61,7 +61,7 @@ export const site: SiteConfig = {
       id: "gestion",
       title: "Gestión simple",
       body: "Controla todos tus proyectos arquitectónicos con nuestras herramientas intuitivas. Comparte avances con clientes, colabora con tu equipo y toma decisiones en tiempo real",
-      imageSrc: "assets/images/Manos_trabajando.jpg",
+      imageSrc: "assets/images/Manos_trabajando.avif",
       imageAlt: "Manos trabajando en circuito electrónico",
       buttonLabel: "Conoce más",
       buttonHref: "#",
@@ -106,7 +106,9 @@ export const site: SiteConfig = {
       linkHref: "#",
     },
   ],
-
+  footerBrand: {
+    tagline: " Transformando la arquitectura con realidad aumentada",
+  },
   footerColumns: [
     {
       title: "Empresa",
@@ -146,10 +148,10 @@ export const site: SiteConfig = {
     },
   ],
   socialLinks: [
-  { platform: "Twitter",   href: "https://twitter.com",   iconClass: "ph ph-twitter-logo" },
-  { platform: "Facebook",  href: "https://facebook.com",  iconClass: "ph ph-facebook-logo" },
-  { platform: "Instagram", href: "https://instagram.com", iconClass: "ph ph-instagram-logo" },
-  { platform: "LinkedIn",  href: "https://linkedin.com",  iconClass: "ph ph-linkedin-logo" },
-  { platform: "YouTube",   href: "https://youtube.com",   iconClass: "ph ph-youtube-logo" },
-],
+    { platform: "Twitter", href: "https://twitter.com", iconClass: "ph ph-twitter-logo" },
+    { platform: "Facebook", href: "https://facebook.com", iconClass: "ph ph-facebook-logo" },
+    { platform: "Instagram", href: "https://instagram.com", iconClass: "ph ph-instagram-logo" },
+    { platform: "LinkedIn", href: "https://linkedin.com", iconClass: "ph ph-linkedin-logo" },
+    { platform: "YouTube", href: "https://youtube.com", iconClass: "ph ph-youtube-logo" },
+  ],
 };

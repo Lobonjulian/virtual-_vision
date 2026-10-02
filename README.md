@@ -4,10 +4,10 @@
 
 **Documento:** ESPEC-2026-004
 **Versión:** 0.1
-**Fecha:** Viernes, 18 de septiembre de 2026
+**Fecha:** 02 de octubre de 2026
 **Equipo:** Frontend Squad — Virtual Vision Inc.
 **Roles:** Julian Lobón (Frontend Developer)
-**Estado:** Kickoff - setup en curso
+**Estado:** Release v0.1
 
 ## 1. Resumen ejecutivo
 
@@ -34,15 +34,18 @@ Virtual Vision permite a arquitectos y diseñadores mostrar proyectos en 3D con 
 - Internacionalización (i18n).
 - Filtrado dinámico.
 - Funcionalidades avanzadas de plataforma.
+- Migrar a Vite (minificación, tree-shaking, HMR).
+- Reemplazar CDN de Phosphor por SVGs locales.
+  -Agregar tests con Vitest.
 
 ## 3. Requisitos funcionales
 
-| ID    | Requisito                                           | Prioridad |
-| ----- | --------------------------------------------------- | --------- |
-| RF-01 | Renderizar cada sección desde datos tipados.        | Alta      |
-| RF-02 | Compilar sin errores bajo `strict`.                 | Alta      |
-| RF-03 | Navegación y CTAs operativos (anclas).              | Media     |
-| RF-04 | Accesibilidad básica: semántica, alt, foco visible. | Alta      |
+| ID    | Requisito                                           | Prioridad | Estado v0.1 |
+| ----- | --------------------------------------------------- | --------- | ----------- |
+| RF-01 | Renderizar cada sección desde datos tipados.        | Alta      | ✔ Cumplido  |
+| RF-02 | Compilar sin errores bajo `strict`.                 | Alta      | ✔ Cumplido  |
+| RF-03 | Navegación y CTAs operativos (anclas).              | Media     | ✔ Cumplido  |
+| RF-04 | Accesibilidad básica: semántica, alt, foco visible. | Alta      | ✔ Cumplido  |
 
 ## 4. Requisitos no funcionales
 
@@ -55,4 +58,20 @@ Virtual Vision permite a arquitectos y diseñadores mostrar proyectos en 3D con 
 
 ## 5. Changelog
 
-- 0.1 (kickoff): especificación inicial y setup del repo.ales atractivos
+- 0.1 (release): landing completa data-driven; Lighthouse 100 SEO / 96 Best Practices / 90+ Accesibilidad.
+- 0.1 (kickoff): especificación inicial y setup del repo.
+
+## 6. Build y ejecución
+
+| Comando            | Descripción                                           |
+| ------------------ | ----------------------------------------------------- |
+| `pnpm install`     | Instala dependencias (TypeScript como devDependency). |
+| `pnpm build`       | Compila `src/` → `dist/`.                             |
+| `pnpm watch`       | Compilación en modo observación.                      |
+| `pnpm dlx serve .` | Sirve el sitio en local.                              |
+
+**Nota de despliegue:** GitHub Pages sirve desde `main`. `dist/` se commitea porque Pages no ejecuta builds.
+
+## Licencia
+
+MIT © 2026 Julian Lobon

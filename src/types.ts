@@ -11,11 +11,13 @@ export interface HeroData {
   readonly imageSrc: string;
   readonly imageAlt: string;
 }
+
 export interface StatItem {
   readonly value: string;
   readonly label: string;
   readonly iconClass: string;
 }
+
 export interface Collaborator {
   readonly name: string;
   readonly role: string;
@@ -52,6 +54,11 @@ export interface FooterLink {
   readonly label: string;
   readonly href: string;
 }
+
+export interface FooterBrand {
+  readonly tagline: string;
+}
+
 export interface FooterColumn {
   readonly title: string;
   readonly links: readonly FooterLink[];
@@ -70,6 +77,7 @@ export interface SiteConfig {
   readonly values: readonly ValueSection[];
   readonly globalStats: readonly GlobalStatItem[];
   readonly services: readonly ServiceItem[];
+  readonly footerBrand: FooterBrand;
   readonly footerColumns: readonly FooterColumn[];
   readonly socialLinks: readonly SocialLink[];
 }

@@ -12,18 +12,28 @@
     <link rel="stylesheet" href="styles/global.css" />
     <!-- TODO: Migrar a SVG locales en v0.2 para eliminar dependencia de CDN -->
     <link
-      rel="stylesheet"
-      type="text/css"
+      rel="preload"
       href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
+    <noscript>
+      <link
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+        rel="stylesheet"
+      />
+    </noscript>
     <script type="module" src="dist/app.js" defer></script>
   </head>
   <body>
-    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <a href="#main-content" class="sr-only">Saltar al contenido principal</a>
     <header class="header" role="banner">
       <div class="header__logo">
         <a href="/" aria-label="Virtual Vision - Inicio">
-          <img src="assets/icons/logo.svg" alt="Logo" />
+          <img src="assets/icons/logo.svg" alt="Logo" width="80" height="auto" />
         </a>
       </div>
       <nav class="header__nav" aria-label="Navegación principal"></nav>
@@ -40,8 +50,8 @@
             Comienza a visualizar proyectos arquitectónicos en realidad aumentada
           </h1>
           <p class="hero__description">
-            La plataforma que permite a arquitectos y diseño mostrar sus proyectos en 3D con
-            realidad aumentada, fácil de usar y accesible para todos digitales para tu negocio
+            La plataforma que permite a arquitectos y diseñadores mostrar sus proyectos en 3D con
+            realidad aumentada, fácil de usar y accesible para todos.
           </p>
           <div class="hero__cta">
             <button id="hero-cta" class="btn btn--secondary" type="button">Prueba</button>
@@ -49,7 +59,7 @@
           </div>
         </div>
         <div class="hero__image">
-          <img src="assets/images/arquitecto-usando-visor.png" alt="arquitecto usando visor" />
+          <img src="assets/images/arquitecto-usando-visor.avif" alt="arquitecto usando visor" />
         </div>
       </section>
 
@@ -79,7 +89,16 @@
     </main>
 
     <footer class="footer" role="contentinfo">
-      <section class="footer__columns"></section>
+      <h2 class="sr-only">Información del sitio</h2>
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="/" aria-label="Virtual Vision - Inicio">
+            <img src="assets/icons/logo.svg" alt="Logo" width="80" height="auto" />
+          </a>
+          <p id="footer-tagline">cargando...</p>
+        </div>
+        <section class="footer__columns"></section>
+      </div>
       <section class="footer__copyright">
         <p>Copyright © 2023 Virtual Vision. Todos los derechos reservados.</p>
         <div class="footer__social"></div>

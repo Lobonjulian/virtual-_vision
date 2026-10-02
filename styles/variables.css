@@ -1,6 +1,6 @@
 :root {
   --color-white-50: #ffffff;
-  --color-white-100: #f8fafc; 
+  --color-white-100: #f8fafc;
   --color-black-50: #1f2937;
   --color-green-100: #22c55e;
   --color-green-200: #dcfce7;
@@ -10,8 +10,8 @@
   --color-papayawhip-100: #ffedd5;
   --color-papayawhip-200: #fdba74;
   --color-yellow-100: #fee97e;
-  --color-gray-100: #4b5563;
-  --color-gray-200: #f9fafb;
+  --color-gray-100: #374151;
+  --color-gray-200: #e8e9eb;
   --color-gray-300: #111827;
 
   --color-bg: var(--color-white-100);
